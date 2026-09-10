@@ -1,0 +1,414 @@
+@import "tailwindcss";
+
+@theme {
+  /* ============ BRAND — NAVY BLUE (#2B3990) ============ */
+  --color-brand-50:  #eef1fa;
+  --color-brand-100: #dbe0f4;
+  --color-brand-200: #b9c3ea;
+  --color-brand-300: #8b9adb;
+  --color-brand-400: #5f70c7;
+  --color-brand-500: #3f4fae;
+  --color-brand-600: #2b3990;
+  --color-brand-700: #242f78;
+  --color-brand-800: #1e2762;
+  --color-brand-900: #1a2152;
+
+  /* ============ PLUM — PURPLE (#7B3FA0) ============ */
+  --color-plum-50:  #f7eefc;
+  --color-plum-100: #eedcf7;
+  --color-plum-200: #ddbbee;
+  --color-plum-300: #c493df;
+  --color-plum-400: #a76ac8;
+  --color-plum-500: #8f4cb2;
+  --color-plum-600: #7b3fa0;
+  --color-plum-700: #653485;
+  --color-plum-800: #532c6d;
+  --color-plum-900: #45265a;
+
+  /* ============ ACCENT — MAGENTA PINK (#E0459A) ============ */
+  --color-accent-50:  #fdeff7;
+  --color-accent-100: #fbdcec;
+  --color-accent-200: #f7bada;
+  --color-accent-300: #f18ec1;
+  --color-accent-400: #e963a8;
+  --color-accent-500: #e0459a;
+  --color-accent-600: #c72f81;
+  --color-accent-700: #a52569;
+  --color-accent-800: #872156;
+  --color-accent-900: #711f49;
+
+  /* ============ AQUA — CYAN (#6FCFE7) ============ */
+  --color-aqua-50:  #eefafd;
+  --color-aqua-100: #d5f2fa;
+  --color-aqua-200: #ade6f5;
+  --color-aqua-300: #85dcef;
+  --color-aqua-400: #6fcfe7;
+  --color-aqua-500: #38b4d4;
+  --color-aqua-600: #2394b4;
+  --color-aqua-700: #1e7792;
+  --color-aqua-800: #1e6178;
+  --color-aqua-900: #1d5165;
+
+  /* ============ NEUTRALS — LIGHT THEME ============ */
+  --color-ink:       #171a2b;
+  --color-ink-soft:  #5a6076;
+  --color-ink-mute:  #8b90a3;
+  --color-line:      #e7e9f2;
+  --color-surface:   #ffffff;
+  --color-canvas:    #f8f9fd;
+}
+
+/* ================= BASE ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent-500);
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--color-brand-50); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--color-aqua-400),
+    var(--color-plum-600),
+    var(--color-accent-500)
+  );
+  border-radius: 99px;
+}
+
+/* ================= UTILITIES ================= */
+
+/* Logo gradient text */
+.grad-text {
+  background: linear-gradient(
+    100deg,
+    var(--color-aqua-400) 0%,
+    var(--color-plum-600) 45%,
+    var(--color-accent-500) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated shimmer version */
+.grad-text-anim {
+  background: linear-gradient(
+    100deg,
+    var(--color-aqua-400),
+    var(--color-plum-600),
+    var(--color-accent-500),
+    var(--color-plum-600),
+    var(--color-aqua-400)
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+@keyframes shine { to { background-position: 250% center; } }
+
+/* Solid gradient background (logo gradient) */
+.grad-bg {
+  background: linear-gradient(
+    100deg,
+    var(--color-aqua-400) 0%,
+    var(--color-plum-600) 50%,
+    var(--color-accent-500) 100%
+  );
+}
+
+/* Deep gradient for dark strips / CTAs */
+.grad-deep {
+  background: linear-gradient(
+    115deg,
+    var(--color-brand-800) 0%,
+    var(--color-brand-600) 40%,
+    var(--color-plum-600) 75%,
+    var(--color-accent-600) 100%
+  );
+}
+
+/* Gradient border card */
+.grad-border {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: 1.25rem;
+}
+.grad-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: linear-gradient(
+    130deg,
+    var(--color-aqua-400),
+    var(--color-plum-500),
+    var(--color-accent-500)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Soft glow blobs for section backgrounds */
+.blob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section container */
+.container-x {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--color-brand-50);
+  color: var(--color-brand-600);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* Primary button */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(100deg, var(--color-brand-600), var(--color-plum-600));
+  box-shadow: 0 12px 30px -10px rgba(43, 57, 144, 0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px -12px rgba(224, 69, 154, 0.55);
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--color-plum-600), var(--color-accent-500));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+.btn-primary:hover::after { opacity: 1; }
+.btn-primary > * { position: relative; z-index: 1; }
+
+/* Ghost button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-line);
+  background: #fff;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  transition: all 0.3s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--color-accent-500);
+  color: var(--color-accent-600);
+  transform: translateY(-2px);
+}
+
+/* FontAwesome flicker fix */
+.svg-inline--fa { vertical-align: -0.125em; }
+
+/* ================= SHINE BUTTON ================= */
+.btn-shine {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 999px;
+  padding: 0.95rem 2.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(
+    100deg,
+    var(--color-brand-600) 0%,
+    var(--color-plum-600) 50%,
+    var(--color-accent-500) 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 12px 32px -12px rgba(43, 57, 144, 0.55);
+  transition: background-position 0.6s ease, transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.btn-shine:hover {
+  background-position: right center;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px -12px rgba(224, 69, 154, 0.6);
+}
+
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-22deg);
+  transition: left 0.75s ease;
+}
+
+.btn-shine:hover::before {
+  left: 130%;
+}
+
+.btn-shine-text {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.btn-shine:hover .btn-shine-text svg {
+  transform: translateX(4px);
+}
+
+.btn-shine-text svg {
+  transition: transform 0.3s ease;
+}
+
+/* ================= MARQUEE ================= */
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation-name: marquee-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* ================= GOLD BUTTON — Award Show ================= */
+.btn-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 999px;
+  padding: 1rem 2.1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1103;
+  background: linear-gradient(100deg, #c9922e 0%, #ffd97a 50%, #c9922e 100%);
+  background-size: 200% auto;
+  box-shadow: 0 14px 36px -12px rgba(255, 217, 122, 0.6);
+  transition: background-position 0.6s ease, transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.btn-gold:hover {
+  background-position: right center;
+  transform: translateY(-3px);
+  box-shadow: 0 20px 46px -12px rgba(255, 217, 122, 0.8);
+}
+
+.btn-gold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-22deg);
+  transition: left 0.75s ease;
+}
+
+.btn-gold:hover::before {
+  left: 130%;
+}
+
+.btn-gold-text {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* ================= HIDE SCROLLBAR (scroll still works) ================= */
+.no-scrollbar {
+  -ms-overflow-style: none;      /* IE & Edge */
+  scrollbar-width: none;          /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;                  /* Chrome, Safari, Opera */
+}
+
