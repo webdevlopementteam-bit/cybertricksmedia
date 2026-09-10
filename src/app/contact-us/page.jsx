@@ -116,6 +116,32 @@ export default function ContactPage() {
   const payRef = useRef(null);
   const payInView = useInView(payRef, { once: true, margin: "-100px" });
 
+  const videoRef = useRef(null);
+
+// Contact page pe aate hi video unmute try karo, page chhodte hi pause
+useEffect(() => {
+  const vid = videoRef.current;
+  if (!vid) return;
+
+  // pehle muted hi rehne do taaki autoplay block na ho
+  vid.muted = true;
+  vid.play().catch(() => {});
+
+  // thodi der baad unmute try karo
+  const t = setTimeout(() => {
+    vid.muted = false;
+    vid.play().catch(() => {
+      // agar browser ne unmuted autoplay block kar diya to muted hi reh jayega
+    });
+  }, 400);
+
+  return () => {
+    clearTimeout(t);
+    vid.pause();
+    vid.currentTime = 0;
+  };
+}, []);
+
   /* Live IST clock */
   useEffect(() => {
     const tick = () =>
@@ -588,77 +614,31 @@ export default function ContactPage() {
               </form>
             </motion.div>
 
-            {/* ---------- LIVE BRIEF PREVIEW ---------- */}
-            <motion.div
-              initial={{ opacity: 0, x: 34 }}
-              animate={formInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="lg:sticky lg:top-32 lg:self-start"
-            >
-              <div
-                className="relative overflow-hidden rounded-[30px] p-8 text-white sm:p-9"
-                style={{
-                  background:
-                    "linear-gradient(140deg, #12163a 0%, #1a2152 40%, #241b52 70%, #2e1a48 100%)",
-                }}
-              >
-                <div className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-accent-500/25 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-20 -left-20 size-56 rounded-full bg-aqua-500/25 blur-3xl" />
+          
 
-                <span className="relative inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-aqua-300 backdrop-blur-sm">
-                  <Sparkles className="size-3.5" />
-                  Live Preview
-                </span>
+{/* ---------- RIGHT: VIDEO ---------- */}
+<motion.div
+  initial={{ opacity: 0, x: 34 }}
+  animate={formInView ? { opacity: 1, x: 0 } : {}}
+  transition={{ duration: 0.8, delay: 0.15 }}
+  className="relative lg:sticky lg:top-32 lg:self-start"
+>
+  <div>
+    <video
+      ref={videoRef}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      className="h-[500px] w-full rounded-[24px] object-contain sm:h-[600px] lg:h-[680px]"
+    >
+      <source src="/contact-call.mp4" type="video/mp4" />
+    </video>
+  </div>
+</motion.div>
 
-                <p className="relative mt-5 text-[13px] text-white/50">
-                  This is what lands on our desk:
-                </p>
 
-                {/* Brief card */}
-                <div className="relative mt-4 space-y-3.5 rounded-2xl border border-white/12 bg-white/[0.06] p-5 backdrop-blur-xl">
-                  <Row label="From" value={form.name || "—"} />
-                  <Row label="Company" value={form.company || "—"} />
-                  <Row label="Email" value={form.email || "—"} />
-                  <Row label="Phone" value={form.phone || "—"} />
-                  <Row label="Service" value={form.service || "—"} highlight />
-                  <Row label="Budget" value={form.budget || "—"} highlight />
-
-                  <div className="border-t border-white/10 pt-3.5">
-                    <p className="text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/40">
-                      The Goal
-                    </p>
-                    <p className="mt-1.5 min-h-[52px] text-[13.5px] leading-relaxed text-white/80">
-                      {form.message || "Waiting for your message…"}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Promises */}
-                <div className="relative mt-7 space-y-3">
-                  {[
-                    { Icon: Zap, t: "Reply in 4 hours", d: "Working days, usually much sooner." },
-                    { Icon: ShieldCheck, t: "No spam, ever", d: "One human reply. No drip sequences." },
-                    { Icon: Building2, t: "Free strategy call", d: "30 minutes, no obligation to buy." },
-                  ].map((p, i) => (
-                    <motion.div
-                      key={p.t}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={formInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-xl bg-white/10 text-aqua-300">
-                        <p.Icon className="size-4" />
-                      </span>
-                      <div>
-                        <p className="text-[13.5px] font-bold text-white">{p.t}</p>
-                        <p className="mt-0.5 text-[12.5px] text-white/50">{p.d}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>

@@ -123,7 +123,7 @@ export const NAV = [
         href: "/ai-services",
         icon: Sparkles,
         links: [
-          { label: "AI Services", href: "/ai-services" },
+          { label: "AI & Automation Services", href: "/ai-and-automation-services" },
         ],
       },
       {

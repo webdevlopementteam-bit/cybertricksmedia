@@ -409,9 +409,9 @@ export const CATEGORIES = {
 
     subs: [
       {
-        name: "AI Services",
+        name: "AI & Automation Services",
         icon: "Sparkles",
-        href: "/ai-services",
+        href: "/ai-and-automation-services",
         desc:
           "AI-powered solutions for automation, content creation, customer interactions, business workflows and smarter decision-making.",
         tags: ["AI Automation", "AI Solutions", "Productivity"],
