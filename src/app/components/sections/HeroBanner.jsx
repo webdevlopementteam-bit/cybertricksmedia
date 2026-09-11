@@ -75,7 +75,7 @@ export default function HeroBanner() {
           ONLY VIDEO
       ===================================================== */}
 
-      <section className="relative hidden h-[700px] w-full overflow-hidden bg-transparent lg:block mt-20">
+      <section className="relative hidden h-[610px] w-full overflow-hidden bg-transparent lg:block">
         <video
           autoPlay
           muted

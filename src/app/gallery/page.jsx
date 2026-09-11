@@ -170,7 +170,7 @@ export default function GalleryPage() {
           BANNER — DARK
       ============================================================ */}
       <section
-        className="relative flex min-h-[500px] items-center overflow-hidden pb-20 pt-[160px] lg:min-h-[560px]"
+        className="relative flex min-h-[500px] items-center overflow-hidden py-20 lg:min-h-[560px]"
         style={{
           background:
             "linear-gradient(140deg, #0e1230 0%, #1a2152 38%, #241b52 68%, #2e1a48 100%)",

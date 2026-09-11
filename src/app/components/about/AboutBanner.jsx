@@ -19,7 +19,7 @@ const PARTICLES = [
 export default function AboutBanner() {
   return (
     <section
-      className="relative flex min-h-[560px] items-center overflow-hidden pb-20 pt-[160px] lg:min-h-[680px]"
+      className="relative flex min-h-[560px] items-center overflow-hidden lg:min-h-[600px]"
       style={{
         background:
           "linear-gradient(140deg, #0e1230 0%, #1a2152 38%, #241b52 68%, #2e1a48 100%)",

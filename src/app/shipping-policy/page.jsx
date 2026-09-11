@@ -90,7 +90,7 @@ export default function ShippingPolicyPage() {
           BANNER — DARK
       ============================================================ */}
       <section
-        className="relative flex min-h-[420px] items-center overflow-hidden pb-16 pt-[160px] lg:min-h-[460px]"
+        className="relative flex min-h-[420px] items-center overflow-hidden py-16 lg:min-h-[420px]"
         style={{
           background:
             "linear-gradient(140deg, #0e1230 0%, #1a2152 38%, #241b52 68%, #2e1a48 100%)",

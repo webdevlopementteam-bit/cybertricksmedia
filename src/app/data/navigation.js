@@ -157,6 +157,7 @@ export const NAV = [
 { label: "How To Pay", href: "/how-to-pay" },
   // { label: "Packages", href: "/packages" },
   { label: "Contact Us", href: "/contact-us" },
+  { label: "Award Show", href: "/award-show" },
 ];
 
 export const CONTACT = {

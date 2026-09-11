@@ -95,7 +95,7 @@ export default function BlogDetailClient({ slug }) {
           BANNER — DARK
       ============================================================ */}
       <section
-        className="relative flex min-h-[380px] items-center overflow-hidden pb-16 pt-[160px]"
+        className="relative flex min-h-[380px] items-center overflow-hidden py-16"
         style={{
           background:
             "linear-gradient(140deg, #0e1230 0%, #1a2152 38%, #241b52 68%, #2e1a48 100%)",

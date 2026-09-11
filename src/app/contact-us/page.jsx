@@ -222,7 +222,7 @@ useEffect(() => {
           BANNER — DARK
       ============================================================ */}
       <section
-        className="relative flex min-h-[520px] items-center overflow-hidden pb-20 pt-[160px] lg:min-h-[620px]"
+        className="relative flex min-h-[520px] items-center overflow-hidden py-20 lg:min-h-[620px]"
         style={{
           background:
             "linear-gradient(140deg, #0e1230 0%, #1a2152 38%, #241b52 68%, #2e1a48 100%)",
@@ -495,7 +495,7 @@ useEffect(() => {
         <div className="pointer-events-none absolute -right-40 bottom-1/4 size-[430px] rounded-full bg-accent-400/14 blur-[135px]" />
 
         <div className="container-x relative z-10">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 ">
 
             {/* ---------- FORM ---------- */}
             <motion.div
@@ -633,7 +633,7 @@ useEffect(() => {
       preload="auto"
       className="h-[500px] w-full rounded-[24px] object-contain sm:h-[600px] lg:h-[680px]"
     >
-      <source src="/contact-call.mp4" type="video/mp4" />
+      <source src="/contact-us-video.mp4" type="video/mp4" />
     </video>
   </div>
 </motion.div>

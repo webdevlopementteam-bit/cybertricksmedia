@@ -123,18 +123,18 @@ export default function Header() {
       {/* ================= MAIN BAR ================= */}
       <div
         className={cn(
-          "border-b transition-all duration-300",
+          "relative z-50 border-b transition-all duration-300", // <-- "relative z-50" add kiya
           scrolled
             ? "border-line bg-white/85 shadow-[0_10px_35px_-12px_rgba(43,57,144,0.22)] backdrop-blur-xl"
             : "border-transparent bg-white",
         )}
       >
         <div
-          className={cn(
-            "mx-auto flex max-w-[1400px] items-center justify-between px-5 transition-all duration-300",
-            scrolled ? "h-[68px]" : "h-[88px]",
-          )}
-        >
+  className={cn(
+    "mx-auto flex max-w-[1500px] items-center justify-between px-5 transition-all duration-300",
+    scrolled ? "h-[60px] lg:h-[68px]" : "h-[72px] lg:h-[88px]",
+  )}
+>
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -145,7 +145,7 @@ export default function Header() {
               priority
               className={cn(
                 "w-auto transition-all duration-300",
-                scrolled ? "h-16" : "h-20",
+                scrolled ? "h-10 lg:h-16" : "h-14 lg:h-20",
               )}
             />
           </Link>
