@@ -22,6 +22,7 @@ const PER_VIEW = 3;
 export default function AwardsSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-120px" });
+  const isVisible = useInView(ref, { margin: "-120px" });
 
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -86,12 +87,12 @@ export default function AwardsSection() {
 
         {/* Rotating rings */}
         <motion.div
-          animate={{ rotate: 360 }}
+          animate={isVisible ? { rotate: 360 } : {}}
           transition={{ duration: 34, repeat: Infinity, ease: "linear" }}
           className="absolute left-1/2 top-1/2 size-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10"
         />
         <motion.div
-          animate={{ rotate: -360 }}
+          animate={isVisible ? { rotate: -360 } : {}}
           transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
           className="absolute left-1/2 top-1/2 size-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/[0.07]"
         />
@@ -99,19 +100,22 @@ export default function AwardsSection() {
         {/* Trophy — spins on Y axis + floats */}
         <div className="relative" style={{ perspective: "1200px" }}>
           <motion.div
-            animate={{ y: [0, -18, 0] }}
+            animate={isVisible ? { y: [0, -18, 0] } : {}}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
             <motion.div
-              animate={{ rotateY: 360 }}
+              animate={isVisible ? { rotateY: 360 } : {}}
               transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-              style={{ transformStyle: "preserve-3d" }}
+              style={{ transformStyle: "preserve-3d", willChange: "transform" }}
               className="w-[240px] xl:w-[290px]"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/home/award.png"
                 alt="Award trophy"
+                width={290}
+                height={550}
+                decoding="async"
                 className="h-[550px] w-full object-contain drop-shadow-[0_25px_50px_rgba(111,207,231,0.4)]"
               />
             </motion.div>
@@ -211,6 +215,9 @@ export default function AwardsSection() {
                       src={a.img}
                       alt={a.title}
                       loading="lazy"
+                      decoding="async"
+                      width={400}
+                      height={500}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
 

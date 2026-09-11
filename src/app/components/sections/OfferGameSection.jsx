@@ -628,8 +628,8 @@ export default function OfferGameSection() {
                     <img
                       src={
                         result.type === "win"
-                          ? "/home/won.png"
-                          : "/home/loose.png"
+                          ? "/home/won.webp"
+                          : "/home/loose.webp"
                       }
                       alt={
                         result.type === "win"

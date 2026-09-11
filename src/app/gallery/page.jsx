@@ -36,60 +36,60 @@ const PHOTOS = [
   /* ---------- ROUND 1 ---------- */
   { id: 1,  cat: "Award Nights", ratio: "tall",   img: "/awards/award1.webp" },
   { id: 2,  cat: "Office Life",  ratio: "tall",   type: "video", src: "/officelife/ofc3.mp4" },
-  { id: 3,  cat: "Film Sets",    ratio: "normal", img: "/gallery/film1.png" },
+  { id: 3,  cat: "Film Sets",    ratio: "normal", img: "/gallery/film1.webp" },
   { id: 4,  cat: "Team",         ratio: "wide",   img: "/gallery/team1.jpeg" },
-  { id: 5,  cat: "Events",       ratio: "square", img: "/event/event1.png" },
+  { id: 5,  cat: "Events",       ratio: "square", img: "/event/event1.webp" },
 
   /* ---------- ROUND 2 ---------- */
   { id: 6,  cat: "Award Nights", ratio: "normal", img: "/awards/award2.webp" },
   { id: 7,  cat: "Office Life",  ratio: "normal", type: "video", src: "/officelife/ofc4.mp4" },
-  { id: 8,  cat: "Film Sets",    ratio: "tall",   img: "/gallery/film3.png" },
+  { id: 8,  cat: "Film Sets",    ratio: "tall",   img: "/gallery/film3.webp" },
   { id: 9,  cat: "Team",         ratio: "normal", img: "/gallery/team2.jpeg" },
-  { id: 10, cat: "Events",       ratio: "wide",   img: "/event/event2.png" },
+  { id: 10, cat: "Events",       ratio: "wide",   img: "/event/event2.webp" },
 
   /* ---------- ROUND 3 ---------- */
   { id: 11, cat: "Award Nights", ratio: "square", img: "/awards/award3.webp" },
-  { id: 13, cat: "Film Sets",    ratio: "square", img: "/gallery/film4.png" },
+  { id: 13, cat: "Film Sets",    ratio: "square", img: "/gallery/film4.webp" },
   { id: 14, cat: "Team",         ratio: "tall",   img: "/gallery/team3.jpeg" },
-  { id: 15, cat: "Events",       ratio: "normal", img: "/event/event3.png" },
+  { id: 15, cat: "Events",       ratio: "normal", img: "/event/event3.webp" },
 
   /* ---------- ROUND 4 ---------- */
   { id: 16, cat: "Award Nights", ratio: "normal", img: "/awards/award4.webp" },
   { id: 17, cat: "Office Life",  ratio: "tall",   type: "video", src: "/officelife/ofc6.mp4" },
-  { id: 18, cat: "Film Sets",    ratio: "wide",   img: "/gallery/film5.png" },
+  { id: 18, cat: "Film Sets",    ratio: "wide",   img: "/gallery/film5.webp" },
   { id: 19, cat: "Team",         ratio: "normal", img: "/gallery/team4.jpeg" },
-  { id: 20, cat: "Events",       ratio: "square", img: "/event/event4.png" },
+  { id: 20, cat: "Events",       ratio: "square", img: "/event/event4.webp" },
 
   /* ---------- ROUND 5 ---------- */
   { id: 21, cat: "Award Nights", ratio: "tall",   img: "/awards/award5.webp" },
   { id: 22, cat: "Office Life",  ratio: "tall",   type: "video", src: "/officelife/ofc7.mp4" },
-  { id: 23, cat: "Film Sets",    ratio: "normal", img: "/gallery/film6.png" },
+  { id: 23, cat: "Film Sets",    ratio: "normal", img: "/gallery/film6.webp" },
   { id: 24, cat: "Team",         ratio: "square", img: "/gallery/team5.jpeg" },
-  { id: 25, cat: "Events",       ratio: "tall",   img: "/event/event5.png" },
+  { id: 25, cat: "Events",       ratio: "tall",   img: "/event/event5.webp" },
 
   /* ---------- ROUND 6 ---------- */
   { id: 26, cat: "Award Nights", ratio: "square", img: "/awards/award6.webp" },
   { id: 27, cat: "Office Life",  ratio: "normal", type: "video", src: "/officelife/ofc8.mp4" },
-  { id: 28, cat: "Film Sets",    ratio: "tall",   img: "/gallery/film7.png" },
+  { id: 28, cat: "Film Sets",    ratio: "tall",   img: "/gallery/film7.webp" },
   { id: 29, cat: "Team",         ratio: "wide",   img: "/gallery/team6.jpeg" },
-  { id: 30, cat: "Events",       ratio: "normal", img: "/event/event6.png" },
+  { id: 30, cat: "Events",       ratio: "normal", img: "/event/event6.webp" },
 
   /* ---------- ROUND 7 ---------- */
   { id: 31, cat: "Award Nights", ratio: "normal", img: "/awards/award7.webp" },
-  { id: 32, cat: "Events",       ratio: "square", img: "/event/event7.png" },
-  { id: 33, cat: "Events",       ratio: "wide",   img: "/event/event8.png" },
-  { id: 34, cat: "Events",       ratio: "normal", img: "/event/event9.png" },
-  { id: 35, cat: "Events",       ratio: "tall",   img: "/event/event10.png" },
+  { id: 32, cat: "Events",       ratio: "square", img: "/event/event7.webp" },
+  { id: 33, cat: "Events",       ratio: "wide",   img: "/event/event8.webp" },
+  { id: 34, cat: "Events",       ratio: "normal", img: "/event/event9.webp" },
+  { id: 35, cat: "Events",       ratio: "tall",   img: "/event/event10.webp" },
 
   /* ---------- REMAINING EVENTS ---------- */
-  { id: 36, cat: "Events",       ratio: "square", img: "/event/event11.png" },
-  { id: 37, cat: "Events",       ratio: "normal", img: "/event/event12.png" },
-  { id: 38, cat: "Events",       ratio: "wide",   img: "/event/event13.png" },
+  { id: 36, cat: "Events",       ratio: "square", img: "/event/event11.webp" },
+  { id: 37, cat: "Events",       ratio: "normal", img: "/event/event12.webp" },
+  { id: 38, cat: "Events",       ratio: "wide",   img: "/event/event13.webp" },
   { id: 39, cat: "Events",       ratio: "square", img: "/event/event14.jpg" },
-  { id: 40, cat: "Events",       ratio: "tall",   img: "/event/event15.png" },
-  { id: 41, cat: "Events",       ratio: "normal", img: "/event/event16.png" },
-  { id: 42, cat: "Events",       ratio: "square", img: "/event/event17.png" },
-  { id: 43, cat: "Events",       ratio: "wide",   img: "/event/event18.png" },
+  { id: 40, cat: "Events",       ratio: "tall",   img: "/event/event15.webp" },
+  { id: 41, cat: "Events",       ratio: "normal", img: "/event/event16.webp" },
+  { id: 42, cat: "Events",       ratio: "square", img: "/event/event17.webp" },
+  { id: 43, cat: "Events",       ratio: "wide",   img: "/event/event18.webp" },
   { id: 44, cat: "Events",       ratio: "normal", img: "/event/event19.jpeg" },
   { id: 45, cat: "Events",       ratio: "tall",   img: "/event/event20.jpeg" },
   { id: 46, cat: "Events",       ratio: "square", img: "/event/event21.jpeg" },
@@ -98,9 +98,9 @@ const PHOTOS = [
 
 /* Images used in the banner's floating photo stack */
 const STACK = [
-  "/awards/award1.png",
+  "/awards/award1.webp",
   "/gallery/team1.jpeg",
-  "/event/event1.png",
+  "/event/event1.webp",
 ];
 
 const RATIO = {
@@ -109,6 +109,31 @@ const RATIO = {
   normal: "aspect-[4/3]",
   square: "aspect-square",
 };
+
+function GridVideo({ src, poster, className }) {
+  const videoRef = useRef(null);
+  const visible = useInView(videoRef, { margin: "200px" });
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (visible) v.play().catch(() => {});
+    else v.pause();
+  }, [visible]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      poster={poster}
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      className={className}
+    />
+  );
+}
 
 const PARTICLES = [
   { top: "16%", left: "8%",  color: "bg-aqua-400",   dur: 18, dx: 40,  dy: -30 },
@@ -431,14 +456,9 @@ export default function GalleryPage() {
                     className={`relative w-full overflow-hidden ${RATIO[p.ratio]}`}
                   >
                     {isVideo ? (
-                      <video
+                      <GridVideo
                         src={p.src}
                         poster={p.img}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
                         className="h-full w-full object-cover grayscale-[0.35] transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                       />
                     ) : (

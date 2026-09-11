@@ -165,7 +165,7 @@ export default function WhyChooseSection() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/home/why.png"
+                src="/home/why.webp"
                 alt="Why choose Cybertricks Media"
                 className="h-auto w-full object-contain"
               />

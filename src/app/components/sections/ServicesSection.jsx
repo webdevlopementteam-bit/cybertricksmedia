@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import {
@@ -202,8 +202,13 @@ export default function ServicesSection() {
 /* ================= SERVICE ROW ================= */
 function ServiceRow({ service, reverse }) {
   const ref = useRef(null);
+  const videoRef = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-120px" });
   const { Icon } = service;
+
+  useEffect(() => {
+    if (inView) videoRef.current?.play().catch(() => {});
+  }, [inView]);
 
   return (
     <div ref={ref} className="grid items-center lg:grid-cols-2">
@@ -298,7 +303,7 @@ function ServiceRow({ service, reverse }) {
 
           {/* VIDEO — background matches the section exactly */}
           <video
-            autoPlay
+            ref={videoRef}
             loop
             muted
             playsInline
