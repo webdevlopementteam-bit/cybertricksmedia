@@ -15,6 +15,21 @@ const CATEGORIES = ["All", "Marketing", "Sales", "Accounts"];
 
 export const JOBS = [
   {
+    title: "Graphic Designer – Intern & Executive",
+    cat: "Marketing",
+    openings: 2,
+    type: "Full-time / Internship",
+    location: "Pitampura, Delhi",
+    exp: "Fresher / Intern",
+    desc: "Create social media creatives, banners, and promotional designs for brands. Immediate joining. Work from office only, and having your own laptop is mandatory. Basic video editing knowledge is an added advantage.",
+    skills: [
+      "Photoshop & Illustrator",
+      "Premiere Pro & Canva",
+      "Creative Designing",
+      "Social Media Creatives & Banners",
+    ],
+  },
+  {
     title: "Branch Sales Manager",
     cat: "Sales",
     openings: 2,
